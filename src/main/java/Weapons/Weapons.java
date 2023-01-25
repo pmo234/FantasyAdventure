@@ -14,4 +14,11 @@ public enum Weapons {
         this.power = power;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public double getPower() {
+        return power;
+    }
 }

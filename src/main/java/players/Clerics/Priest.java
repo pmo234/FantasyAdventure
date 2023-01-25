@@ -9,4 +9,9 @@ public class Priest extends Cleric{
     public double heal() {
         return 0;
     }
+
+    @Override
+    public double takesDamage() {
+        return 0;
+    }
 }
