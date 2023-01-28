@@ -1,5 +1,7 @@
 package Weapons;
 
+import java.util.ArrayList;
+
 public enum Weapons {
     SWORD("Sword",1.5),
     CLUB("Club",1),
@@ -15,10 +17,15 @@ public enum Weapons {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public double getPower() {
-        return power;
+        return this.power;
     }
+
+//    public ArrayList<Weapons> getAllWeapons() {
+//        ArrayList<Weapons> allWeapons = new ArrayList<Weapons>();
+//        for
+//    }
 }

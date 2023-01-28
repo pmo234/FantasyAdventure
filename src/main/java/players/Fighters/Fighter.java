@@ -10,7 +10,7 @@ public abstract class Fighter extends Player implements IAttack {
     int attackPwr;
     public Fighter(String name, int HP, int attackPwr) {
         super(name, HP);
-        this.weapon = Weapons.CLUB;
+        this.weapon = Weapons.SWORD;
         this.attackPwr = attackPwr;
     }
 
