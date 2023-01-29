@@ -6,6 +6,7 @@ import players.Fighters.Fighter;
 import players.Mages.Mage;
 
 public abstract class Player implements ITakeDamage {
+
     private String name;
     private int HP;
 
@@ -30,7 +31,7 @@ public abstract class Player implements ITakeDamage {
         this.HP = HP;
     }
     public int takesDamage(ITakeDamage character){
-//        System.out.println(character.getClass());
+
         if(character instanceof Fighter){
             return this.HP -= (((Fighter) character).attack());
         } else if (character instanceof Mage) {

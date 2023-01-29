@@ -8,12 +8,14 @@ import Weapons.Weapons;
 import players.Fighters.Barbarian;
 import players.Player;
 
+import static jdk.nashorn.internal.objects.Global.exit;
+
 
 public class Admin {
 
     public static void startGame() {
         Scanner myObj = new Scanner(System.in);
-        Barbarian barbarian = new Barbarian("Steve The Barbarian", 30, 2);
+        Barbarian barbarian = Barbarian.getInstance();
 
         System.out.println("Hello Steve, welcome to Steve Quest");
         System.out.println("What kind of Steve are you?");
@@ -28,18 +30,20 @@ public class Admin {
 
         Scanner myObj = new Scanner(System.in);
         ArrayList<Weapons> allWeapons = new ArrayList<Weapons>(EnumSet.allOf(Weapons.class));
+        Barbarian barbarian = Barbarian.getInstance();
         System.out.println("What is your weapon of choice?  Sword Club Fish Axe GUNOFSOULS (careful)");
         String chosenWeapon = myObj.nextLine();
         for (Weapons weapon:allWeapons) {
-            System.out.println(weapon.getName().getClass());
-            System.out.println(chosenWeapon.getClass());
-            System.out.println(weapon.getName());
-            System.out.println(chosenWeapon);
-            if (chosenWeapon.equals(weapon.getName())) {
-                System.out.println(barbarian.getName() + "You have chosen " + chosenWeapon);
-                break;
-            }
 
+            if (chosenWeapon.equals(weapon.getName())) {
+                System.out.println(barbarian.getName() + " you have chosen " + chosenWeapon);
+                barbarian.setWeapon(weapon);
+                System.out.println(barbarian.getName());
+                System.out.println(barbarian.getWeapon());
+                System.exit(0);
+            }
+            System.out.println("You dare mock me? Pick a real choice this time");
+            choosingAWeapon();
         }
 //        if(weapons.valueOf() == Weapons.getName())
 //        System.out.println("You chose " + weapons.);
